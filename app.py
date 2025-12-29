@@ -37,7 +37,7 @@ if uploaded_files:
             elif date_digit: file_date = date_digit.group(1)
             
             # عرض النتيجة
-            st.success(f"**Day ({file_date}): {file_total:,.2f}")
+            st.success(f"- Day ({file_date}): {file_total:,.2f}")
             grand_total += file_total
             doc.close()
         except Exception as e:
@@ -46,4 +46,28 @@ if uploaded_files:
     st.divider()
 
     st.metric(label="GRAND TOTAL", value=f"{grand_total:,.2f}")
+
+#  توقيع الاسم
+st.markdown("---")
+footer = """
+<style>
+.footer {
+    text-align: center;
+    padding: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.name {
+    color: #FF4B4B;
+    font-weight: bold;
+    font-size: 20px;
+    letter-spacing: 3px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+</style>
+<div class="footer">
+    <p style="color: #666; margin-bottom: 0;">Developed with precision by</p>
+    <div class="name">MOATAZ</div>
+</div>
+"""
+st.markdown(footer, unsafe_allow_html=True)
 
