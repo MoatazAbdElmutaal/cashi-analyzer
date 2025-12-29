@@ -46,3 +46,4 @@ if uploaded_files:
     st.divider()
 
     st.metric(label="GRAND TOTAL", value=f"{grand_total:,.2f}")
+
