@@ -37,11 +37,12 @@ if uploaded_files:
             elif date_digit: file_date = date_digit.group(1)
             
             # عرض النتيجة
-            st.success(f"**Day {i}** ({file_date}): {file_total:,.2f}")
+            st.success(f"**Day ({file_date}): {file_total:,.2f}")
             grand_total += file_total
             doc.close()
         except Exception as e:
             st.error(f"Error in file {file.name}: {e}")
 
     st.divider()
+
     st.metric(label="GRAND TOTAL", value=f"{grand_total:,.2f}")
